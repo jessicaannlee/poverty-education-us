@@ -1,0 +1,2526 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
+    <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js' type='text/javascript'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body ng-app ng-controller='rChartsCtrl'>
+    
+    
+                     <input id='slider' type='range' min=2003 max=2015 ng-model='year' width=200>
+                     <span ng-bind='year'></span>
+                     <div id='chart_1' class='rChart datamaps'> 
+                     
+                     <script>
+                     function rChartsCtrl($scope){
+                     $scope.year = 2003;
+                     $scope.$watch('year', function(newYear){
+                     mapchart_1.updateChoropleth(chartParams.newData[newYear]);
+                     })
+                     }
+                     </script>
+                     </div>    
+    <script id='popup-template' type='text/x-handlebars-template'>
+    
+</script>
+<script>
+  var chartParams = {
+ "dom": "chart_1",
+"width":    800,
+"height":    400,
+"scope": "usa",
+"fills": {
+ "(11,13]": "#FFFFCC",
+"(13,15]": "#FFEDA0",
+"(15,18]": "#FED976",
+"(18,20]": "#FEB24C",
+"(20,22]": "#FD8D3C",
+"(22,24]": "#FC4E2A",
+"(24,27]": "#E31A1C",
+"(27,29]": "#BD0026",
+"(29,31]": "#800026",
+"defaultFill": "white" 
+},
+"data": {
+ "AL": {
+ "Year":   2003,
+"State": "AL",
+"Gap": 23.795,
+"fillKey": "(22,24]" 
+},
+"AK": {
+ "Year":   2003,
+"State": "AK",
+"Gap": 21.063,
+"fillKey": "(20,22]" 
+},
+"AZ": {
+ "Year":   2003,
+"State": "AZ",
+"Gap": 23.688,
+"fillKey": "(22,24]" 
+},
+"AR": {
+ "Year":   2003,
+"State": "AR",
+"Gap": 18.292,
+"fillKey": "(18,20]" 
+},
+"CA": {
+ "Year":   2003,
+"State": "CA",
+"Gap": 25.076,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2003,
+"State": "CO",
+"Gap": 23.877,
+"fillKey": "(22,24]" 
+},
+"CT": {
+ "Year":   2003,
+"State": "CT",
+"Gap": 29.706,
+"fillKey": "(29,31]" 
+},
+"DE": {
+ "Year":   2003,
+"State": "DE",
+"Gap": 18.121,
+"fillKey": "(18,20]" 
+},
+"FL": {
+ "Year":   2003,
+"State": "FL",
+"Gap": 22.961,
+"fillKey": "(22,24]" 
+},
+"GA": {
+ "Year":   2003,
+"State": "GA",
+"Gap": 22.768,
+"fillKey": "(22,24]" 
+},
+"HI": {
+ "Year":   2003,
+"State": "HI",
+"Gap": 20.921,
+"fillKey": "(20,22]" 
+},
+"ID": {
+ "Year":   2003,
+"State": "ID",
+"Gap": 14.067,
+"fillKey": "(13,15]" 
+},
+"IL": {
+ "Year":   2003,
+"State": "IL",
+"Gap":  30.69,
+"fillKey": "(29,31]" 
+},
+"IN": {
+ "Year":   2003,
+"State": "IN",
+"Gap": 19.704,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2003,
+"State": "IA",
+"Gap": 17.038,
+"fillKey": "(15,18]" 
+},
+"KS": {
+ "Year":   2003,
+"State": "KS",
+"Gap": 18.695,
+"fillKey": "(18,20]" 
+},
+"KY": {
+ "Year":   2003,
+"State": "KY",
+"Gap":  16.81,
+"fillKey": "(15,18]" 
+},
+"LA": {
+ "Year":   2003,
+"State": "LA",
+"Gap": 21.923,
+"fillKey": "(20,22]" 
+},
+"ME": {
+ "Year":   2003,
+"State": "ME",
+"Gap": 14.667,
+"fillKey": "(13,15]" 
+},
+"MD": {
+ "Year":   2003,
+"State": "MD",
+"Gap": 28.161,
+"fillKey": "(27,29]" 
+},
+"MA": {
+ "Year":   2003,
+"State": "MA",
+"Gap": 22.462,
+"fillKey": "(22,24]" 
+},
+"MI": {
+ "Year":   2003,
+"State": "MI",
+"Gap": 24.465,
+"fillKey": "(24,27]" 
+},
+"MN": {
+ "Year":   2003,
+"State": "MN",
+"Gap": 21.962,
+"fillKey": "(20,22]" 
+},
+"MS": {
+ "Year":   2003,
+"State": "MS",
+"Gap": 22.235,
+"fillKey": "(22,24]" 
+},
+"MO": {
+ "Year":   2003,
+"State": "MO",
+"Gap": 18.443,
+"fillKey": "(18,20]" 
+},
+"MT": {
+ "Year":   2003,
+"State": "MT",
+"Gap": 14.392,
+"fillKey": "(13,15]" 
+},
+"NE": {
+ "Year":   2003,
+"State": "NE",
+"Gap": 21.932,
+"fillKey": "(20,22]" 
+},
+"NV": {
+ "Year":   2003,
+"State": "NV",
+"Gap": 21.096,
+"fillKey": "(20,22]" 
+},
+"NH": {
+ "Year":   2003,
+"State": "NH",
+"Gap": 17.747,
+"fillKey": "(18,20]" 
+},
+"NJ": {
+ "Year":   2003,
+"State": "NJ",
+"Gap": 25.912,
+"fillKey": "(24,27]" 
+},
+"NM": {
+ "Year":   2003,
+"State": "NM",
+"Gap": 18.938,
+"fillKey": "(18,20]" 
+},
+"NY": {
+ "Year":   2003,
+"State": "NY",
+"Gap": 22.579,
+"fillKey": "(22,24]" 
+},
+"NC": {
+ "Year":   2003,
+"State": "NC",
+"Gap": 22.523,
+"fillKey": "(22,24]" 
+},
+"ND": {
+ "Year":   2003,
+"State": "ND",
+"Gap": 13.683,
+"fillKey": "(13,15]" 
+},
+"OH": {
+ "Year":   2003,
+"State": "OH",
+"Gap": 22.587,
+"fillKey": "(22,24]" 
+},
+"OK": {
+ "Year":   2003,
+"State": "OK",
+"Gap":  16.15,
+"fillKey": "(15,18]" 
+},
+"OR": {
+ "Year":   2003,
+"State": "OR",
+"Gap": 15.963,
+"fillKey": "(15,18]" 
+},
+"PA": {
+ "Year":   2003,
+"State": "PA",
+"Gap": 25.436,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2003,
+"State": "RI",
+"Gap": 24.819,
+"fillKey": "(24,27]" 
+},
+"SC": {
+ "Year":   2003,
+"State": "SC",
+"Gap":  21.09,
+"fillKey": "(20,22]" 
+},
+"SD": {
+ "Year":   2003,
+"State": "SD",
+"Gap": 16.291,
+"fillKey": "(15,18]" 
+},
+"TN": {
+ "Year":   2003,
+"State": "TN",
+"Gap": 20.094,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2003,
+"State": "TX",
+"Gap": 17.483,
+"fillKey": "(15,18]" 
+},
+"UT": {
+ "Year":   2003,
+"State": "UT",
+"Gap": 14.234,
+"fillKey": "(13,15]" 
+},
+"VT": {
+ "Year":   2003,
+"State": "VT",
+"Gap": 18.814,
+"fillKey": "(18,20]" 
+},
+"VA": {
+ "Year":   2003,
+"State": "VA",
+"Gap": 21.349,
+"fillKey": "(20,22]" 
+},
+"WA": {
+ "Year":   2003,
+"State": "WA",
+"Gap": 20.604,
+"fillKey": "(20,22]" 
+},
+"WV": {
+ "Year":   2003,
+"State": "WV",
+"Gap": 12.109,
+"fillKey": "(11,13]" 
+},
+"WI": {
+ "Year":   2003,
+"State": "WI",
+"Gap": 22.754,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2003,
+"State": "WY",
+"Gap":   13.1,
+"fillKey": "(11,13]" 
+} 
+},
+"legend": true,
+"labels": true,
+"id": "chart_1",
+"bodyattrs": "ng-app ng-controller='rChartsCtrl'",
+"newData": {
+ "2003": {
+ "AL": {
+ "Year":   2003,
+"State": "AL",
+"Gap": 23.795,
+"fillKey": "(22,24]" 
+},
+"AK": {
+ "Year":   2003,
+"State": "AK",
+"Gap": 21.063,
+"fillKey": "(20,22]" 
+},
+"AZ": {
+ "Year":   2003,
+"State": "AZ",
+"Gap": 23.688,
+"fillKey": "(22,24]" 
+},
+"AR": {
+ "Year":   2003,
+"State": "AR",
+"Gap": 18.292,
+"fillKey": "(18,20]" 
+},
+"CA": {
+ "Year":   2003,
+"State": "CA",
+"Gap": 25.076,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2003,
+"State": "CO",
+"Gap": 23.877,
+"fillKey": "(22,24]" 
+},
+"CT": {
+ "Year":   2003,
+"State": "CT",
+"Gap": 29.706,
+"fillKey": "(29,31]" 
+},
+"DE": {
+ "Year":   2003,
+"State": "DE",
+"Gap": 18.121,
+"fillKey": "(18,20]" 
+},
+"FL": {
+ "Year":   2003,
+"State": "FL",
+"Gap": 22.961,
+"fillKey": "(22,24]" 
+},
+"GA": {
+ "Year":   2003,
+"State": "GA",
+"Gap": 22.768,
+"fillKey": "(22,24]" 
+},
+"HI": {
+ "Year":   2003,
+"State": "HI",
+"Gap": 20.921,
+"fillKey": "(20,22]" 
+},
+"ID": {
+ "Year":   2003,
+"State": "ID",
+"Gap": 14.067,
+"fillKey": "(13,15]" 
+},
+"IL": {
+ "Year":   2003,
+"State": "IL",
+"Gap":  30.69,
+"fillKey": "(29,31]" 
+},
+"IN": {
+ "Year":   2003,
+"State": "IN",
+"Gap": 19.704,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2003,
+"State": "IA",
+"Gap": 17.038,
+"fillKey": "(15,18]" 
+},
+"KS": {
+ "Year":   2003,
+"State": "KS",
+"Gap": 18.695,
+"fillKey": "(18,20]" 
+},
+"KY": {
+ "Year":   2003,
+"State": "KY",
+"Gap":  16.81,
+"fillKey": "(15,18]" 
+},
+"LA": {
+ "Year":   2003,
+"State": "LA",
+"Gap": 21.923,
+"fillKey": "(20,22]" 
+},
+"ME": {
+ "Year":   2003,
+"State": "ME",
+"Gap": 14.667,
+"fillKey": "(13,15]" 
+},
+"MD": {
+ "Year":   2003,
+"State": "MD",
+"Gap": 28.161,
+"fillKey": "(27,29]" 
+},
+"MA": {
+ "Year":   2003,
+"State": "MA",
+"Gap": 22.462,
+"fillKey": "(22,24]" 
+},
+"MI": {
+ "Year":   2003,
+"State": "MI",
+"Gap": 24.465,
+"fillKey": "(24,27]" 
+},
+"MN": {
+ "Year":   2003,
+"State": "MN",
+"Gap": 21.962,
+"fillKey": "(20,22]" 
+},
+"MS": {
+ "Year":   2003,
+"State": "MS",
+"Gap": 22.235,
+"fillKey": "(22,24]" 
+},
+"MO": {
+ "Year":   2003,
+"State": "MO",
+"Gap": 18.443,
+"fillKey": "(18,20]" 
+},
+"MT": {
+ "Year":   2003,
+"State": "MT",
+"Gap": 14.392,
+"fillKey": "(13,15]" 
+},
+"NE": {
+ "Year":   2003,
+"State": "NE",
+"Gap": 21.932,
+"fillKey": "(20,22]" 
+},
+"NV": {
+ "Year":   2003,
+"State": "NV",
+"Gap": 21.096,
+"fillKey": "(20,22]" 
+},
+"NH": {
+ "Year":   2003,
+"State": "NH",
+"Gap": 17.747,
+"fillKey": "(18,20]" 
+},
+"NJ": {
+ "Year":   2003,
+"State": "NJ",
+"Gap": 25.912,
+"fillKey": "(24,27]" 
+},
+"NM": {
+ "Year":   2003,
+"State": "NM",
+"Gap": 18.938,
+"fillKey": "(18,20]" 
+},
+"NY": {
+ "Year":   2003,
+"State": "NY",
+"Gap": 22.579,
+"fillKey": "(22,24]" 
+},
+"NC": {
+ "Year":   2003,
+"State": "NC",
+"Gap": 22.523,
+"fillKey": "(22,24]" 
+},
+"ND": {
+ "Year":   2003,
+"State": "ND",
+"Gap": 13.683,
+"fillKey": "(13,15]" 
+},
+"OH": {
+ "Year":   2003,
+"State": "OH",
+"Gap": 22.587,
+"fillKey": "(22,24]" 
+},
+"OK": {
+ "Year":   2003,
+"State": "OK",
+"Gap":  16.15,
+"fillKey": "(15,18]" 
+},
+"OR": {
+ "Year":   2003,
+"State": "OR",
+"Gap": 15.963,
+"fillKey": "(15,18]" 
+},
+"PA": {
+ "Year":   2003,
+"State": "PA",
+"Gap": 25.436,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2003,
+"State": "RI",
+"Gap": 24.819,
+"fillKey": "(24,27]" 
+},
+"SC": {
+ "Year":   2003,
+"State": "SC",
+"Gap":  21.09,
+"fillKey": "(20,22]" 
+},
+"SD": {
+ "Year":   2003,
+"State": "SD",
+"Gap": 16.291,
+"fillKey": "(15,18]" 
+},
+"TN": {
+ "Year":   2003,
+"State": "TN",
+"Gap": 20.094,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2003,
+"State": "TX",
+"Gap": 17.483,
+"fillKey": "(15,18]" 
+},
+"UT": {
+ "Year":   2003,
+"State": "UT",
+"Gap": 14.234,
+"fillKey": "(13,15]" 
+},
+"VT": {
+ "Year":   2003,
+"State": "VT",
+"Gap": 18.814,
+"fillKey": "(18,20]" 
+},
+"VA": {
+ "Year":   2003,
+"State": "VA",
+"Gap": 21.349,
+"fillKey": "(20,22]" 
+},
+"WA": {
+ "Year":   2003,
+"State": "WA",
+"Gap": 20.604,
+"fillKey": "(20,22]" 
+},
+"WV": {
+ "Year":   2003,
+"State": "WV",
+"Gap": 12.109,
+"fillKey": "(11,13]" 
+},
+"WI": {
+ "Year":   2003,
+"State": "WI",
+"Gap": 22.754,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2003,
+"State": "WY",
+"Gap":   13.1,
+"fillKey": "(11,13]" 
+} 
+},
+"2005": {
+ "AL": {
+ "Year":   2005,
+"State": "AL",
+"Gap": 23.643,
+"fillKey": "(22,24]" 
+},
+"AK": {
+ "Year":   2005,
+"State": "AK",
+"Gap": 20.356,
+"fillKey": "(20,22]" 
+},
+"AZ": {
+ "Year":   2005,
+"State": "AZ",
+"Gap": 22.081,
+"fillKey": "(20,22]" 
+},
+"AR": {
+ "Year":   2005,
+"State": "AR",
+"Gap": 20.126,
+"fillKey": "(20,22]" 
+},
+"CA": {
+ "Year":   2005,
+"State": "CA",
+"Gap":  24.95,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2005,
+"State": "CO",
+"Gap": 23.715,
+"fillKey": "(22,24]" 
+},
+"CT": {
+ "Year":   2005,
+"State": "CT",
+"Gap":  26.64,
+"fillKey": "(24,27]" 
+},
+"DE": {
+ "Year":   2005,
+"State": "DE",
+"Gap": 18.348,
+"fillKey": "(18,20]" 
+},
+"FL": {
+ "Year":   2005,
+"State": "FL",
+"Gap": 20.088,
+"fillKey": "(20,22]" 
+},
+"GA": {
+ "Year":   2005,
+"State": "GA",
+"Gap": 21.523,
+"fillKey": "(20,22]" 
+},
+"HI": {
+ "Year":   2005,
+"State": "HI",
+"Gap": 18.142,
+"fillKey": "(18,20]" 
+},
+"ID": {
+ "Year":   2005,
+"State": "ID",
+"Gap": 14.133,
+"fillKey": "(13,15]" 
+},
+"IL": {
+ "Year":   2005,
+"State": "IL",
+"Gap": 26.686,
+"fillKey": "(24,27]" 
+},
+"IN": {
+ "Year":   2005,
+"State": "IN",
+"Gap": 16.502,
+"fillKey": "(15,18]" 
+},
+"IA": {
+ "Year":   2005,
+"State": "IA",
+"Gap": 13.897,
+"fillKey": "(13,15]" 
+},
+"KS": {
+ "Year":   2005,
+"State": "KS",
+"Gap": 18.617,
+"fillKey": "(18,20]" 
+},
+"KY": {
+ "Year":   2005,
+"State": "KY",
+"Gap": 16.688,
+"fillKey": "(15,18]" 
+},
+"LA": {
+ "Year":   2005,
+"State": "LA",
+"Gap": 19.987,
+"fillKey": "(20,22]" 
+},
+"ME": {
+ "Year":   2005,
+"State": "ME",
+"Gap":  15.02,
+"fillKey": "(13,15]" 
+},
+"MD": {
+ "Year":   2005,
+"State": "MD",
+"Gap": 25.801,
+"fillKey": "(24,27]" 
+},
+"MA": {
+ "Year":   2005,
+"State": "MA",
+"Gap": 22.594,
+"fillKey": "(22,24]" 
+},
+"MI": {
+ "Year":   2005,
+"State": "MI",
+"Gap": 22.593,
+"fillKey": "(22,24]" 
+},
+"MN": {
+ "Year":   2005,
+"State": "MN",
+"Gap": 20.709,
+"fillKey": "(20,22]" 
+},
+"MS": {
+ "Year":   2005,
+"State": "MS",
+"Gap": 19.775,
+"fillKey": "(18,20]" 
+},
+"MO": {
+ "Year":   2005,
+"State": "MO",
+"Gap": 18.882,
+"fillKey": "(18,20]" 
+},
+"MT": {
+ "Year":   2005,
+"State": "MT",
+"Gap": 15.448,
+"fillKey": "(15,18]" 
+},
+"NE": {
+ "Year":   2005,
+"State": "NE",
+"Gap": 21.625,
+"fillKey": "(20,22]" 
+},
+"NV": {
+ "Year":   2005,
+"State": "NV",
+"Gap": 20.449,
+"fillKey": "(20,22]" 
+},
+"NH": {
+ "Year":   2005,
+"State": "NH",
+"Gap": 17.331,
+"fillKey": "(15,18]" 
+},
+"NJ": {
+ "Year":   2005,
+"State": "NJ",
+"Gap": 24.407,
+"fillKey": "(22,24]" 
+},
+"NM": {
+ "Year":   2005,
+"State": "NM",
+"Gap": 20.449,
+"fillKey": "(20,22]" 
+},
+"NY": {
+ "Year":   2005,
+"State": "NY",
+"Gap": 20.462,
+"fillKey": "(20,22]" 
+},
+"NC": {
+ "Year":   2005,
+"State": "NC",
+"Gap": 21.684,
+"fillKey": "(20,22]" 
+},
+"ND": {
+ "Year":   2005,
+"State": "ND",
+"Gap": 12.556,
+"fillKey": "(11,13]" 
+},
+"OH": {
+ "Year":   2005,
+"State": "OH",
+"Gap": 24.745,
+"fillKey": "(24,27]" 
+},
+"OK": {
+ "Year":   2005,
+"State": "OK",
+"Gap": 15.164,
+"fillKey": "(13,15]" 
+},
+"OR": {
+ "Year":   2005,
+"State": "OR",
+"Gap":  14.39,
+"fillKey": "(13,15]" 
+},
+"PA": {
+ "Year":   2005,
+"State": "PA",
+"Gap": 24.729,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2005,
+"State": "RI",
+"Gap": 25.481,
+"fillKey": "(24,27]" 
+},
+"SC": {
+ "Year":   2005,
+"State": "SC",
+"Gap": 22.932,
+"fillKey": "(22,24]" 
+},
+"SD": {
+ "Year":   2005,
+"State": "SD",
+"Gap":   16.9,
+"fillKey": "(15,18]" 
+},
+"TN": {
+ "Year":   2005,
+"State": "TN",
+"Gap": 21.702,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2005,
+"State": "TX",
+"Gap": 20.113,
+"fillKey": "(20,22]" 
+},
+"UT": {
+ "Year":   2005,
+"State": "UT",
+"Gap": 15.418,
+"fillKey": "(13,15]" 
+},
+"VT": {
+ "Year":   2005,
+"State": "VT",
+"Gap": 19.285,
+"fillKey": "(18,20]" 
+},
+"VA": {
+ "Year":   2005,
+"State": "VA",
+"Gap":  23.87,
+"fillKey": "(22,24]" 
+},
+"WA": {
+ "Year":   2005,
+"State": "WA",
+"Gap": 18.778,
+"fillKey": "(18,20]" 
+},
+"WV": {
+ "Year":   2005,
+"State": "WV",
+"Gap": 12.534,
+"fillKey": "(11,13]" 
+},
+"WI": {
+ "Year":   2005,
+"State": "WI",
+"Gap":  23.28,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2005,
+"State": "WY",
+"Gap": 10.922,
+"fillKey": "(11,13]" 
+} 
+},
+"2007": {
+ "AL": {
+ "Year":   2007,
+"State": "AL",
+"Gap": 24.805,
+"fillKey": "(24,27]" 
+},
+"AK": {
+ "Year":   2007,
+"State": "AK",
+"Gap": 22.078,
+"fillKey": "(20,22]" 
+},
+"AZ": {
+ "Year":   2007,
+"State": "AZ",
+"Gap": 25.433,
+"fillKey": "(24,27]" 
+},
+"AR": {
+ "Year":   2007,
+"State": "AR",
+"Gap": 20.135,
+"fillKey": "(20,22]" 
+},
+"CA": {
+ "Year":   2007,
+"State": "CA",
+"Gap": 24.725,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2007,
+"State": "CO",
+"Gap": 25.533,
+"fillKey": "(24,27]" 
+},
+"CT": {
+ "Year":   2007,
+"State": "CT",
+"Gap": 29.466,
+"fillKey": "(29,31]" 
+},
+"DE": {
+ "Year":   2007,
+"State": "DE",
+"Gap": 15.849,
+"fillKey": "(15,18]" 
+},
+"FL": {
+ "Year":   2007,
+"State": "FL",
+"Gap": 17.914,
+"fillKey": "(18,20]" 
+},
+"GA": {
+ "Year":   2007,
+"State": "GA",
+"Gap": 23.013,
+"fillKey": "(22,24]" 
+},
+"HI": {
+ "Year":   2007,
+"State": "HI",
+"Gap": 17.495,
+"fillKey": "(15,18]" 
+},
+"ID": {
+ "Year":   2007,
+"State": "ID",
+"Gap": 16.384,
+"fillKey": "(15,18]" 
+},
+"IL": {
+ "Year":   2007,
+"State": "IL",
+"Gap": 25.703,
+"fillKey": "(24,27]" 
+},
+"IN": {
+ "Year":   2007,
+"State": "IN",
+"Gap": 18.137,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2007,
+"State": "IA",
+"Gap": 17.512,
+"fillKey": "(15,18]" 
+},
+"KS": {
+ "Year":   2007,
+"State": "KS",
+"Gap": 18.304,
+"fillKey": "(18,20]" 
+},
+"KY": {
+ "Year":   2007,
+"State": "KY",
+"Gap": 19.156,
+"fillKey": "(18,20]" 
+},
+"LA": {
+ "Year":   2007,
+"State": "LA",
+"Gap":  18.49,
+"fillKey": "(18,20]" 
+},
+"ME": {
+ "Year":   2007,
+"State": "ME",
+"Gap": 15.857,
+"fillKey": "(15,18]" 
+},
+"MD": {
+ "Year":   2007,
+"State": "MD",
+"Gap": 23.917,
+"fillKey": "(22,24]" 
+},
+"MA": {
+ "Year":   2007,
+"State": "MA",
+"Gap": 21.882,
+"fillKey": "(20,22]" 
+},
+"MI": {
+ "Year":   2007,
+"State": "MI",
+"Gap": 22.059,
+"fillKey": "(20,22]" 
+},
+"MN": {
+ "Year":   2007,
+"State": "MN",
+"Gap": 21.618,
+"fillKey": "(20,22]" 
+},
+"MS": {
+ "Year":   2007,
+"State": "MS",
+"Gap": 19.203,
+"fillKey": "(18,20]" 
+},
+"MO": {
+ "Year":   2007,
+"State": "MO",
+"Gap": 18.875,
+"fillKey": "(18,20]" 
+},
+"MT": {
+ "Year":   2007,
+"State": "MT",
+"Gap": 16.072,
+"fillKey": "(15,18]" 
+},
+"NE": {
+ "Year":   2007,
+"State": "NE",
+"Gap": 21.145,
+"fillKey": "(20,22]" 
+},
+"NV": {
+ "Year":   2007,
+"State": "NV",
+"Gap": 21.131,
+"fillKey": "(20,22]" 
+},
+"NH": {
+ "Year":   2007,
+"State": "NH",
+"Gap": 15.015,
+"fillKey": "(13,15]" 
+},
+"NJ": {
+ "Year":   2007,
+"State": "NJ",
+"Gap": 22.333,
+"fillKey": "(22,24]" 
+},
+"NM": {
+ "Year":   2007,
+"State": "NM",
+"Gap": 21.498,
+"fillKey": "(20,22]" 
+},
+"NY": {
+ "Year":   2007,
+"State": "NY",
+"Gap": 19.661,
+"fillKey": "(18,20]" 
+},
+"NC": {
+ "Year":   2007,
+"State": "NC",
+"Gap": 21.071,
+"fillKey": "(20,22]" 
+},
+"ND": {
+ "Year":   2007,
+"State": "ND",
+"Gap": 14.649,
+"fillKey": "(13,15]" 
+},
+"OH": {
+ "Year":   2007,
+"State": "OH",
+"Gap": 22.512,
+"fillKey": "(22,24]" 
+},
+"OK": {
+ "Year":   2007,
+"State": "OK",
+"Gap": 15.609,
+"fillKey": "(15,18]" 
+},
+"OR": {
+ "Year":   2007,
+"State": "OR",
+"Gap": 19.545,
+"fillKey": "(18,20]" 
+},
+"PA": {
+ "Year":   2007,
+"State": "PA",
+"Gap": 26.141,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2007,
+"State": "RI",
+"Gap": 22.489,
+"fillKey": "(22,24]" 
+},
+"SC": {
+ "Year":   2007,
+"State": "SC",
+"Gap": 22.828,
+"fillKey": "(22,24]" 
+},
+"SD": {
+ "Year":   2007,
+"State": "SD",
+"Gap": 17.344,
+"fillKey": "(15,18]" 
+},
+"TN": {
+ "Year":   2007,
+"State": "TN",
+"Gap":  19.74,
+"fillKey": "(18,20]" 
+},
+"TX": {
+ "Year":   2007,
+"State": "TX",
+"Gap":  17.04,
+"fillKey": "(15,18]" 
+},
+"UT": {
+ "Year":   2007,
+"State": "UT",
+"Gap": 17.205,
+"fillKey": "(15,18]" 
+},
+"VT": {
+ "Year":   2007,
+"State": "VT",
+"Gap": 17.379,
+"fillKey": "(15,18]" 
+},
+"VA": {
+ "Year":   2007,
+"State": "VA",
+"Gap": 19.985,
+"fillKey": "(20,22]" 
+},
+"WA": {
+ "Year":   2007,
+"State": "WA",
+"Gap": 21.119,
+"fillKey": "(20,22]" 
+},
+"WV": {
+ "Year":   2007,
+"State": "WV",
+"Gap": 14.674,
+"fillKey": "(13,15]" 
+},
+"WI": {
+ "Year":   2007,
+"State": "WI",
+"Gap": 24.596,
+"fillKey": "(24,27]" 
+},
+"WY": {
+ "Year":   2007,
+"State": "WY",
+"Gap": 12.038,
+"fillKey": "(11,13]" 
+} 
+},
+"2009": {
+ "AL": {
+ "Year":   2009,
+"State": "AL",
+"Gap": 23.375,
+"fillKey": "(22,24]" 
+},
+"AK": {
+ "Year":   2009,
+"State": "AK",
+"Gap": 20.568,
+"fillKey": "(20,22]" 
+},
+"AZ": {
+ "Year":   2009,
+"State": "AZ",
+"Gap": 24.263,
+"fillKey": "(22,24]" 
+},
+"AR": {
+ "Year":   2009,
+"State": "AR",
+"Gap":  21.62,
+"fillKey": "(20,22]" 
+},
+"CA": {
+ "Year":   2009,
+"State": "CA",
+"Gap": 26.399,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2009,
+"State": "CO",
+"Gap": 24.754,
+"fillKey": "(24,27]" 
+},
+"CT": {
+ "Year":   2009,
+"State": "CT",
+"Gap": 27.913,
+"fillKey": "(27,29]" 
+},
+"DE": {
+ "Year":   2009,
+"State": "DE",
+"Gap": 18.574,
+"fillKey": "(18,20]" 
+},
+"FL": {
+ "Year":   2009,
+"State": "FL",
+"Gap": 16.127,
+"fillKey": "(15,18]" 
+},
+"GA": {
+ "Year":   2009,
+"State": "GA",
+"Gap": 23.938,
+"fillKey": "(22,24]" 
+},
+"HI": {
+ "Year":   2009,
+"State": "HI",
+"Gap": 20.705,
+"fillKey": "(20,22]" 
+},
+"ID": {
+ "Year":   2009,
+"State": "ID",
+"Gap":  12.76,
+"fillKey": "(11,13]" 
+},
+"IL": {
+ "Year":   2009,
+"State": "IL",
+"Gap": 27.196,
+"fillKey": "(27,29]" 
+},
+"IN": {
+ "Year":   2009,
+"State": "IN",
+"Gap": 18.444,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2009,
+"State": "IA",
+"Gap": 16.777,
+"fillKey": "(15,18]" 
+},
+"KS": {
+ "Year":   2009,
+"State": "KS",
+"Gap": 17.593,
+"fillKey": "(15,18]" 
+},
+"KY": {
+ "Year":   2009,
+"State": "KY",
+"Gap": 20.632,
+"fillKey": "(20,22]" 
+},
+"LA": {
+ "Year":   2009,
+"State": "LA",
+"Gap":  21.61,
+"fillKey": "(20,22]" 
+},
+"ME": {
+ "Year":   2009,
+"State": "ME",
+"Gap": 15.961,
+"fillKey": "(15,18]" 
+},
+"MD": {
+ "Year":   2009,
+"State": "MD",
+"Gap": 24.115,
+"fillKey": "(22,24]" 
+},
+"MA": {
+ "Year":   2009,
+"State": "MA",
+"Gap": 22.958,
+"fillKey": "(22,24]" 
+},
+"MI": {
+ "Year":   2009,
+"State": "MI",
+"Gap": 24.928,
+"fillKey": "(24,27]" 
+},
+"MN": {
+ "Year":   2009,
+"State": "MN",
+"Gap": 23.102,
+"fillKey": "(22,24]" 
+},
+"MS": {
+ "Year":   2009,
+"State": "MS",
+"Gap": 21.835,
+"fillKey": "(20,22]" 
+},
+"MO": {
+ "Year":   2009,
+"State": "MO",
+"Gap": 21.444,
+"fillKey": "(20,22]" 
+},
+"MT": {
+ "Year":   2009,
+"State": "MT",
+"Gap": 15.194,
+"fillKey": "(13,15]" 
+},
+"NE": {
+ "Year":   2009,
+"State": "NE",
+"Gap": 19.733,
+"fillKey": "(18,20]" 
+},
+"NV": {
+ "Year":   2009,
+"State": "NV",
+"Gap": 15.628,
+"fillKey": "(15,18]" 
+},
+"NH": {
+ "Year":   2009,
+"State": "NH",
+"Gap": 17.649,
+"fillKey": "(15,18]" 
+},
+"NJ": {
+ "Year":   2009,
+"State": "NJ",
+"Gap": 25.807,
+"fillKey": "(24,27]" 
+},
+"NM": {
+ "Year":   2009,
+"State": "NM",
+"Gap": 22.377,
+"fillKey": "(22,24]" 
+},
+"NY": {
+ "Year":   2009,
+"State": "NY",
+"Gap": 16.287,
+"fillKey": "(15,18]" 
+},
+"NC": {
+ "Year":   2009,
+"State": "NC",
+"Gap": 22.427,
+"fillKey": "(22,24]" 
+},
+"ND": {
+ "Year":   2009,
+"State": "ND",
+"Gap": 13.735,
+"fillKey": "(13,15]" 
+},
+"OH": {
+ "Year":   2009,
+"State": "OH",
+"Gap": 23.453,
+"fillKey": "(22,24]" 
+},
+"OK": {
+ "Year":   2009,
+"State": "OK",
+"Gap": 13.064,
+"fillKey": "(11,13]" 
+},
+"OR": {
+ "Year":   2009,
+"State": "OR",
+"Gap": 20.481,
+"fillKey": "(20,22]" 
+},
+"PA": {
+ "Year":   2009,
+"State": "PA",
+"Gap": 24.809,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2009,
+"State": "RI",
+"Gap": 25.453,
+"fillKey": "(24,27]" 
+},
+"SC": {
+ "Year":   2009,
+"State": "SC",
+"Gap": 22.442,
+"fillKey": "(22,24]" 
+},
+"SD": {
+ "Year":   2009,
+"State": "SD",
+"Gap": 16.557,
+"fillKey": "(15,18]" 
+},
+"TN": {
+ "Year":   2009,
+"State": "TN",
+"Gap": 20.037,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2009,
+"State": "TX",
+"Gap": 19.675,
+"fillKey": "(18,20]" 
+},
+"UT": {
+ "Year":   2009,
+"State": "UT",
+"Gap":  20.63,
+"fillKey": "(20,22]" 
+},
+"VT": {
+ "Year":   2009,
+"State": "VT",
+"Gap": 18.782,
+"fillKey": "(18,20]" 
+},
+"VA": {
+ "Year":   2009,
+"State": "VA",
+"Gap": 19.986,
+"fillKey": "(20,22]" 
+},
+"WA": {
+ "Year":   2009,
+"State": "WA",
+"Gap": 20.272,
+"fillKey": "(20,22]" 
+},
+"WV": {
+ "Year":   2009,
+"State": "WV",
+"Gap": 14.764,
+"fillKey": "(13,15]" 
+},
+"WI": {
+ "Year":   2009,
+"State": "WI",
+"Gap": 23.162,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2009,
+"State": "WY",
+"Gap": 11.606,
+"fillKey": "(11,13]" 
+} 
+},
+"2011": {
+ "AL": {
+ "Year":   2011,
+"State": "AL",
+"Gap": 21.404,
+"fillKey": "(20,22]" 
+},
+"AK": {
+ "Year":   2011,
+"State": "AK",
+"Gap": 23.443,
+"fillKey": "(22,24]" 
+},
+"AZ": {
+ "Year":   2011,
+"State": "AZ",
+"Gap": 19.839,
+"fillKey": "(18,20]" 
+},
+"AR": {
+ "Year":   2011,
+"State": "AR",
+"Gap":  21.71,
+"fillKey": "(20,22]" 
+},
+"CA": {
+ "Year":   2011,
+"State": "CA",
+"Gap": 29.257,
+"fillKey": "(29,31]" 
+},
+"CO": {
+ "Year":   2011,
+"State": "CO",
+"Gap": 25.404,
+"fillKey": "(24,27]" 
+},
+"CT": {
+ "Year":   2011,
+"State": "CT",
+"Gap": 31.219,
+"fillKey": "(29,31]" 
+},
+"DE": {
+ "Year":   2011,
+"State": "DE",
+"Gap": 19.098,
+"fillKey": "(18,20]" 
+},
+"FL": {
+ "Year":   2011,
+"State": "FL",
+"Gap": 19.757,
+"fillKey": "(18,20]" 
+},
+"GA": {
+ "Year":   2011,
+"State": "GA",
+"Gap": 25.233,
+"fillKey": "(24,27]" 
+},
+"HI": {
+ "Year":   2011,
+"State": "HI",
+"Gap":  19.85,
+"fillKey": "(18,20]" 
+},
+"ID": {
+ "Year":   2011,
+"State": "ID",
+"Gap": 16.449,
+"fillKey": "(15,18]" 
+},
+"IL": {
+ "Year":   2011,
+"State": "IL",
+"Gap": 26.771,
+"fillKey": "(27,29]" 
+},
+"IN": {
+ "Year":   2011,
+"State": "IN",
+"Gap": 17.957,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2011,
+"State": "IA",
+"Gap": 17.219,
+"fillKey": "(15,18]" 
+},
+"KS": {
+ "Year":   2011,
+"State": "KS",
+"Gap": 17.447,
+"fillKey": "(15,18]" 
+},
+"KY": {
+ "Year":   2011,
+"State": "KY",
+"Gap": 19.104,
+"fillKey": "(18,20]" 
+},
+"LA": {
+ "Year":   2011,
+"State": "LA",
+"Gap": 21.634,
+"fillKey": "(20,22]" 
+},
+"ME": {
+ "Year":   2011,
+"State": "ME",
+"Gap": 17.562,
+"fillKey": "(15,18]" 
+},
+"MD": {
+ "Year":   2011,
+"State": "MD",
+"Gap": 25.198,
+"fillKey": "(24,27]" 
+},
+"MA": {
+ "Year":   2011,
+"State": "MA",
+"Gap": 22.436,
+"fillKey": "(22,24]" 
+},
+"MI": {
+ "Year":   2011,
+"State": "MI",
+"Gap": 23.234,
+"fillKey": "(22,24]" 
+},
+"MN": {
+ "Year":   2011,
+"State": "MN",
+"Gap": 22.504,
+"fillKey": "(22,24]" 
+},
+"MS": {
+ "Year":   2011,
+"State": "MS",
+"Gap": 22.479,
+"fillKey": "(22,24]" 
+},
+"MO": {
+ "Year":   2011,
+"State": "MO",
+"Gap": 21.743,
+"fillKey": "(20,22]" 
+},
+"MT": {
+ "Year":   2011,
+"State": "MT",
+"Gap":  16.45,
+"fillKey": "(15,18]" 
+},
+"NE": {
+ "Year":   2011,
+"State": "NE",
+"Gap": 22.896,
+"fillKey": "(22,24]" 
+},
+"NV": {
+ "Year":   2011,
+"State": "NV",
+"Gap": 18.594,
+"fillKey": "(18,20]" 
+},
+"NH": {
+ "Year":   2011,
+"State": "NH",
+"Gap": 15.237,
+"fillKey": "(13,15]" 
+},
+"NJ": {
+ "Year":   2011,
+"State": "NJ",
+"Gap": 23.569,
+"fillKey": "(22,24]" 
+},
+"NM": {
+ "Year":   2011,
+"State": "NM",
+"Gap": 21.999,
+"fillKey": "(20,22]" 
+},
+"NY": {
+ "Year":   2011,
+"State": "NY",
+"Gap":  18.43,
+"fillKey": "(18,20]" 
+},
+"NC": {
+ "Year":   2011,
+"State": "NC",
+"Gap": 20.745,
+"fillKey": "(20,22]" 
+},
+"ND": {
+ "Year":   2011,
+"State": "ND",
+"Gap": 16.344,
+"fillKey": "(15,18]" 
+},
+"OH": {
+ "Year":   2011,
+"State": "OH",
+"Gap":  19.89,
+"fillKey": "(18,20]" 
+},
+"OK": {
+ "Year":   2011,
+"State": "OK",
+"Gap": 14.321,
+"fillKey": "(13,15]" 
+},
+"OR": {
+ "Year":   2011,
+"State": "OR",
+"Gap": 24.134,
+"fillKey": "(22,24]" 
+},
+"PA": {
+ "Year":   2011,
+"State": "PA",
+"Gap": 24.507,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2011,
+"State": "RI",
+"Gap": 22.604,
+"fillKey": "(22,24]" 
+},
+"SC": {
+ "Year":   2011,
+"State": "SC",
+"Gap": 23.569,
+"fillKey": "(22,24]" 
+},
+"SD": {
+ "Year":   2011,
+"State": "SD",
+"Gap": 17.871,
+"fillKey": "(18,20]" 
+},
+"TN": {
+ "Year":   2011,
+"State": "TN",
+"Gap": 20.086,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2011,
+"State": "TX",
+"Gap": 18.909,
+"fillKey": "(18,20]" 
+},
+"UT": {
+ "Year":   2011,
+"State": "UT",
+"Gap": 17.616,
+"fillKey": "(15,18]" 
+},
+"VT": {
+ "Year":   2011,
+"State": "VT",
+"Gap": 15.005,
+"fillKey": "(13,15]" 
+},
+"VA": {
+ "Year":   2011,
+"State": "VA",
+"Gap": 21.542,
+"fillKey": "(20,22]" 
+},
+"WA": {
+ "Year":   2011,
+"State": "WA",
+"Gap": 24.449,
+"fillKey": "(22,24]" 
+},
+"WV": {
+ "Year":   2011,
+"State": "WV",
+"Gap": 16.668,
+"fillKey": "(15,18]" 
+},
+"WI": {
+ "Year":   2011,
+"State": "WI",
+"Gap": 22.948,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2011,
+"State": "WY",
+"Gap":  12.89,
+"fillKey": "(11,13]" 
+} 
+},
+"2013": {
+ "AL": {
+ "Year":   2013,
+"State": "AL",
+"Gap": 23.141,
+"fillKey": "(22,24]" 
+},
+"AK": {
+ "Year":   2013,
+"State": "AK",
+"Gap":  24.13,
+"fillKey": "(22,24]" 
+},
+"AZ": {
+ "Year":   2013,
+"State": "AZ",
+"Gap":  22.27,
+"fillKey": "(22,24]" 
+},
+"AR": {
+ "Year":   2013,
+"State": "AR",
+"Gap": 18.384,
+"fillKey": "(18,20]" 
+},
+"CA": {
+ "Year":   2013,
+"State": "CA",
+"Gap": 25.311,
+"fillKey": "(24,27]" 
+},
+"CO": {
+ "Year":   2013,
+"State": "CO",
+"Gap": 23.991,
+"fillKey": "(22,24]" 
+},
+"CT": {
+ "Year":   2013,
+"State": "CT",
+"Gap": 30.513,
+"fillKey": "(29,31]" 
+},
+"DE": {
+ "Year":   2013,
+"State": "DE",
+"Gap": 20.718,
+"fillKey": "(20,22]" 
+},
+"FL": {
+ "Year":   2013,
+"State": "FL",
+"Gap": 21.473,
+"fillKey": "(20,22]" 
+},
+"GA": {
+ "Year":   2013,
+"State": "GA",
+"Gap":  25.09,
+"fillKey": "(24,27]" 
+},
+"HI": {
+ "Year":   2013,
+"State": "HI",
+"Gap": 19.429,
+"fillKey": "(18,20]" 
+},
+"ID": {
+ "Year":   2013,
+"State": "ID",
+"Gap":   15.3,
+"fillKey": "(13,15]" 
+},
+"IL": {
+ "Year":   2013,
+"State": "IL",
+"Gap": 25.915,
+"fillKey": "(24,27]" 
+},
+"IN": {
+ "Year":   2013,
+"State": "IN",
+"Gap": 20.176,
+"fillKey": "(20,22]" 
+},
+"IA": {
+ "Year":   2013,
+"State": "IA",
+"Gap": 22.593,
+"fillKey": "(22,24]" 
+},
+"KS": {
+ "Year":   2013,
+"State": "KS",
+"Gap": 18.195,
+"fillKey": "(18,20]" 
+},
+"KY": {
+ "Year":   2013,
+"State": "KY",
+"Gap": 19.135,
+"fillKey": "(18,20]" 
+},
+"LA": {
+ "Year":   2013,
+"State": "LA",
+"Gap": 18.442,
+"fillKey": "(18,20]" 
+},
+"ME": {
+ "Year":   2013,
+"State": "ME",
+"Gap": 17.995,
+"fillKey": "(18,20]" 
+},
+"MD": {
+ "Year":   2013,
+"State": "MD",
+"Gap": 29.922,
+"fillKey": "(29,31]" 
+},
+"MA": {
+ "Year":   2013,
+"State": "MA",
+"Gap":  27.06,
+"fillKey": "(27,29]" 
+},
+"MI": {
+ "Year":   2013,
+"State": "MI",
+"Gap": 27.613,
+"fillKey": "(27,29]" 
+},
+"MN": {
+ "Year":   2013,
+"State": "MN",
+"Gap": 25.386,
+"fillKey": "(24,27]" 
+},
+"MS": {
+ "Year":   2013,
+"State": "MS",
+"Gap":  22.67,
+"fillKey": "(22,24]" 
+},
+"MO": {
+ "Year":   2013,
+"State": "MO",
+"Gap":  20.09,
+"fillKey": "(20,22]" 
+},
+"MT": {
+ "Year":   2013,
+"State": "MT",
+"Gap": 17.326,
+"fillKey": "(15,18]" 
+},
+"NE": {
+ "Year":   2013,
+"State": "NE",
+"Gap": 24.257,
+"fillKey": "(22,24]" 
+},
+"NV": {
+ "Year":   2013,
+"State": "NV",
+"Gap": 16.336,
+"fillKey": "(15,18]" 
+},
+"NH": {
+ "Year":   2013,
+"State": "NH",
+"Gap": 18.906,
+"fillKey": "(18,20]" 
+},
+"NJ": {
+ "Year":   2013,
+"State": "NJ",
+"Gap": 24.516,
+"fillKey": "(24,27]" 
+},
+"NM": {
+ "Year":   2013,
+"State": "NM",
+"Gap": 18.991,
+"fillKey": "(18,20]" 
+},
+"NY": {
+ "Year":   2013,
+"State": "NY",
+"Gap": 20.561,
+"fillKey": "(20,22]" 
+},
+"NC": {
+ "Year":   2013,
+"State": "NC",
+"Gap": 24.085,
+"fillKey": "(22,24]" 
+},
+"ND": {
+ "Year":   2013,
+"State": "ND",
+"Gap": 16.299,
+"fillKey": "(15,18]" 
+},
+"OH": {
+ "Year":   2013,
+"State": "OH",
+"Gap":  24.96,
+"fillKey": "(24,27]" 
+},
+"OK": {
+ "Year":   2013,
+"State": "OK",
+"Gap": 16.578,
+"fillKey": "(15,18]" 
+},
+"OR": {
+ "Year":   2013,
+"State": "OR",
+"Gap": 23.474,
+"fillKey": "(22,24]" 
+},
+"PA": {
+ "Year":   2013,
+"State": "PA",
+"Gap":  22.64,
+"fillKey": "(22,24]" 
+},
+"RI": {
+ "Year":   2013,
+"State": "RI",
+"Gap": 24.486,
+"fillKey": "(24,27]" 
+},
+"SC": {
+ "Year":   2013,
+"State": "SC",
+"Gap": 25.098,
+"fillKey": "(24,27]" 
+},
+"SD": {
+ "Year":   2013,
+"State": "SD",
+"Gap": 19.562,
+"fillKey": "(18,20]" 
+},
+"TN": {
+ "Year":   2013,
+"State": "TN",
+"Gap": 25.384,
+"fillKey": "(24,27]" 
+},
+"TX": {
+ "Year":   2013,
+"State": "TX",
+"Gap": 22.647,
+"fillKey": "(22,24]" 
+},
+"UT": {
+ "Year":   2013,
+"State": "UT",
+"Gap": 17.277,
+"fillKey": "(15,18]" 
+},
+"VT": {
+ "Year":   2013,
+"State": "VT",
+"Gap": 19.527,
+"fillKey": "(18,20]" 
+},
+"VA": {
+ "Year":   2013,
+"State": "VA",
+"Gap": 23.359,
+"fillKey": "(22,24]" 
+},
+"WA": {
+ "Year":   2013,
+"State": "WA",
+"Gap": 23.192,
+"fillKey": "(22,24]" 
+},
+"WV": {
+ "Year":   2013,
+"State": "WV",
+"Gap": 14.654,
+"fillKey": "(13,15]" 
+},
+"WI": {
+ "Year":   2013,
+"State": "WI",
+"Gap": 23.666,
+"fillKey": "(22,24]" 
+},
+"WY": {
+ "Year":   2013,
+"State": "WY",
+"Gap": 12.843,
+"fillKey": "(11,13]" 
+} 
+},
+"2015": {
+ "AL": {
+ "Year":   2015,
+"State": "AL",
+"Gap": 21.391,
+"fillKey": "(20,22]" 
+},
+"AK": {
+ "Year":   2015,
+"State": "AK",
+"Gap": 22.908,
+"fillKey": "(22,24]" 
+},
+"AZ": {
+ "Year":   2015,
+"State": "AZ",
+"Gap":  23.37,
+"fillKey": "(22,24]" 
+},
+"AR": {
+ "Year":   2015,
+"State": "AR",
+"Gap": 15.716,
+"fillKey": "(15,18]" 
+},
+"CA": {
+ "Year":   2015,
+"State": "CA",
+"Gap": 27.687,
+"fillKey": "(27,29]" 
+},
+"CO": {
+ "Year":   2015,
+"State": "CO",
+"Gap": 25.807,
+"fillKey": "(24,27]" 
+},
+"CT": {
+ "Year":   2015,
+"State": "CT",
+"Gap":  27.63,
+"fillKey": "(27,29]" 
+},
+"DE": {
+ "Year":   2015,
+"State": "DE",
+"Gap": 15.871,
+"fillKey": "(15,18]" 
+},
+"FL": {
+ "Year":   2015,
+"State": "FL",
+"Gap": 19.121,
+"fillKey": "(18,20]" 
+},
+"GA": {
+ "Year":   2015,
+"State": "GA",
+"Gap": 23.686,
+"fillKey": "(22,24]" 
+},
+"HI": {
+ "Year":   2015,
+"State": "HI",
+"Gap": 20.668,
+"fillKey": "(20,22]" 
+},
+"ID": {
+ "Year":   2015,
+"State": "ID",
+"Gap": 18.533,
+"fillKey": "(18,20]" 
+},
+"IL": {
+ "Year":   2015,
+"State": "IL",
+"Gap": 27.181,
+"fillKey": "(27,29]" 
+},
+"IN": {
+ "Year":   2015,
+"State": "IN",
+"Gap":   18.5,
+"fillKey": "(18,20]" 
+},
+"IA": {
+ "Year":   2015,
+"State": "IA",
+"Gap": 21.212,
+"fillKey": "(20,22]" 
+},
+"KS": {
+ "Year":   2015,
+"State": "KS",
+"Gap": 22.116,
+"fillKey": "(20,22]" 
+},
+"KY": {
+ "Year":   2015,
+"State": "KY",
+"Gap": 20.763,
+"fillKey": "(20,22]" 
+},
+"LA": {
+ "Year":   2015,
+"State": "LA",
+"Gap": 19.091,
+"fillKey": "(18,20]" 
+},
+"ME": {
+ "Year":   2015,
+"State": "ME",
+"Gap": 18.336,
+"fillKey": "(18,20]" 
+},
+"MD": {
+ "Year":   2015,
+"State": "MD",
+"Gap": 27.925,
+"fillKey": "(27,29]" 
+},
+"MA": {
+ "Year":   2015,
+"State": "MA",
+"Gap": 25.707,
+"fillKey": "(24,27]" 
+},
+"MI": {
+ "Year":   2015,
+"State": "MI",
+"Gap": 24.379,
+"fillKey": "(22,24]" 
+},
+"MN": {
+ "Year":   2015,
+"State": "MN",
+"Gap":  25.52,
+"fillKey": "(24,27]" 
+},
+"MS": {
+ "Year":   2015,
+"State": "MS",
+"Gap":  21.27,
+"fillKey": "(20,22]" 
+},
+"MO": {
+ "Year":   2015,
+"State": "MO",
+"Gap": 20.724,
+"fillKey": "(20,22]" 
+},
+"MT": {
+ "Year":   2015,
+"State": "MT",
+"Gap": 18.497,
+"fillKey": "(18,20]" 
+},
+"NE": {
+ "Year":   2015,
+"State": "NE",
+"Gap": 22.933,
+"fillKey": "(22,24]" 
+},
+"NV": {
+ "Year":   2015,
+"State": "NV",
+"Gap": 19.703,
+"fillKey": "(18,20]" 
+},
+"NH": {
+ "Year":   2015,
+"State": "NH",
+"Gap": 18.956,
+"fillKey": "(18,20]" 
+},
+"NJ": {
+ "Year":   2015,
+"State": "NJ",
+"Gap":  25.17,
+"fillKey": "(24,27]" 
+},
+"NM": {
+ "Year":   2015,
+"State": "NM",
+"Gap": 18.716,
+"fillKey": "(18,20]" 
+},
+"NY": {
+ "Year":   2015,
+"State": "NY",
+"Gap": 19.772,
+"fillKey": "(18,20]" 
+},
+"NC": {
+ "Year":   2015,
+"State": "NC",
+"Gap":  24.34,
+"fillKey": "(22,24]" 
+},
+"ND": {
+ "Year":   2015,
+"State": "ND",
+"Gap": 18.964,
+"fillKey": "(18,20]" 
+},
+"OH": {
+ "Year":   2015,
+"State": "OH",
+"Gap": 26.661,
+"fillKey": "(24,27]" 
+},
+"OK": {
+ "Year":   2015,
+"State": "OK",
+"Gap":  19.14,
+"fillKey": "(18,20]" 
+},
+"OR": {
+ "Year":   2015,
+"State": "OR",
+"Gap": 19.799,
+"fillKey": "(18,20]" 
+},
+"PA": {
+ "Year":   2015,
+"State": "PA",
+"Gap": 24.651,
+"fillKey": "(24,27]" 
+},
+"RI": {
+ "Year":   2015,
+"State": "RI",
+"Gap": 23.373,
+"fillKey": "(22,24]" 
+},
+"SC": {
+ "Year":   2015,
+"State": "SC",
+"Gap": 22.997,
+"fillKey": "(22,24]" 
+},
+"SD": {
+ "Year":   2015,
+"State": "SD",
+"Gap": 19.564,
+"fillKey": "(18,20]" 
+},
+"TN": {
+ "Year":   2015,
+"State": "TN",
+"Gap": 20.162,
+"fillKey": "(20,22]" 
+},
+"TX": {
+ "Year":   2015,
+"State": "TX",
+"Gap": 25.092,
+"fillKey": "(24,27]" 
+},
+"UT": {
+ "Year":   2015,
+"State": "UT",
+"Gap": 18.427,
+"fillKey": "(18,20]" 
+},
+"VT": {
+ "Year":   2015,
+"State": "VT",
+"Gap": 20.246,
+"fillKey": "(20,22]" 
+},
+"VA": {
+ "Year":   2015,
+"State": "VA",
+"Gap": 22.784,
+"fillKey": "(22,24]" 
+},
+"WA": {
+ "Year":   2015,
+"State": "WA",
+"Gap": 27.428,
+"fillKey": "(27,29]" 
+},
+"WV": {
+ "Year":   2015,
+"State": "WV",
+"Gap": 18.148,
+"fillKey": "(18,20]" 
+},
+"WI": {
+ "Year":   2015,
+"State": "WI",
+"Gap": 24.618,
+"fillKey": "(24,27]" 
+},
+"WY": {
+ "Year":   2015,
+"State": "WY",
+"Gap": 15.825,
+"fillKey": "(15,18]" 
+} 
+} 
+} 
+}
+  chartParams.element = document.getElementById('chart_1')
+  
+  
+  var mapchart_1 = new Datamap(chartParams);
+  
+  
+    
+  // draw a bubble map if specified
+  if (chartParams.bubbles) {
+    var bubbles = chartParams.bubbles
+    mapchart_1.bubbles(bubbles)
+  }
+  
+  if (chartParams.labels){
+    mapchart_1.labels()
+  }
+  
+  if (chartParams.legend){
+    mapchart_1.legend()
+  }
+  
+  setProjection = function( element, options ) {
+    var projection, path;
+ 
+      projection = d3.geo.albersUsa()
+        .scale(element.offsetWidth)
+        .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+ 
+    path = d3.geo.path()
+      .projection( projection );
+ 
+    return {path: path, projection: projection};
+  }
+</script>
+
+<style>
+.datamaps {
+  position: relative;
+}
+</style>
+    
+    <script></script>    
+  </body>
+</html>
