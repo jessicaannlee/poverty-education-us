@@ -19,7 +19,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Average:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -86,7 +86,7 @@
                 <h2>Some Background</h2>
                 <p>This is an exercise in data and story telling, produced while I was at the <a href="https://ctedreform.org">Connecticut Council for Education Reform</a>. For this project, I downloaded and compiled data on 4th grade average educational outcomes in mathematics between students at the poverty level and those who are not, from 2003 to 2015, via the <a href="https://nces.ed.gov/nationsreportcard/statecomparisons/">National Assessment on Educational Progress</a> (NAEP). Eligibility for the national school lunch program is used as a proxy measure for a student's economic status. This was made possible by <a href="https://github.com/ramnathv">Ramnath Vaidyanathan</a> and his work on <a href="http://rmaps.github.io/blog/posts/animated-choropleths/">rMaps</a>. The images are Joseph Egan and Hunter Thomson productions, via <a href="http://www.designboom.com/design/joseph-egan-hunter-thomson-anamorphic-typography/">Design Boom</a>. The theme is from <a href="http://startbootstrap.com/">Start Bootstrap.</a></p>
                 <h4>The Larger Issues Informing This Project</h4>
-                <p>Poverty negatively impacts academic achievement the world over. [<a href="https://www.google.com/search?q=poverty+education&gws_rd=cr&ei=Z_eMV8K_KMqIwgSjyJYw">1</a>] Results from the Teaching and Learning International Survey (TALIS) in 2012 --- conducted and published by the Organization for Economic Cooperation and Development (OECD) --- reveal growing economic disparity among U.S. students. [<a href="https://www.aft.org/ae/winter2014-2015/darling-hammond">2</a>] About one in five children in the U.S. live below the federal poverty level, and poverty rates appear to be rising. [<a href="https://www.nccp.org/topics/childpoverty.html">3</a>, <a href="https://www.povertyusa.org/the-state-of-poverty/poverty-facts/">4</a>]</p>
+                <p>Poverty negatively impacts academic achievement the world over. [<a href="https://www.google.com/search?q=poverty+education&gws_rd=cr&ei=Z_eMV8K_KMqIwgSjyJYw">1</a>] Results from the Teaching and Learning International Survey (TALIS) in 2012 — conducted and published by the Organization for Economic Cooperation and Development (OECD) — reveal growing economic disparity among U.S. students. [<a href="https://www.aft.org/ae/winter2014-2015/darling-hammond">2</a>] This growing income inequality has also corresponded with rising academic achievement gaps. [<a href="http://cepa.stanford.edu/content/widening-academic-achievement-gap-between-rich-and-poor-new-evidence-and-possible">3</a>]</p>
             </div>
         </div>
     </section>
@@ -96,17 +96,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>The Data</h2>
-                <p>Below is a map visualizing the difference in average scale scores in NAEP mathematics between 4th grade students not eligible for school lunches (non-poverty) and those who are (poverty). The darker the state, the worse the achievement gap. Sliding the scale to see how the differences change per state over the years from 2003 to 2015, while the range of the achievement gap has decreased nationwide, it has generally worsened throughout the country.</p>
+                <p>Below is a map visualizing the difference in average scale scores in NAEP mathematics between 4th grade students not eligible for school lunches (not designated "low-income") and those who are (designated "low-income"). The darker the state, the worse the achievement gap. Sliding the scale to see how the differences change per state over the years from 2003 to 2015, while the range of the achievement gap has decreased nationwide, it has generally worsened throughout the country.</p>
 				<h4>Achievement Gap Between Non-Poverty Students and Their Peers: Unranked</h4>
 				<iframe src='assets/grade4_math_unranked.html' scrolling='no' seamless class='rChart datamaps '	id=iframe-chart_1 width=100% height=500px></iframe>
 				<br><br><br>
-                <p>This next map ranks these differences in average scale scores in total (over 2003 to 2015), and colors each state according to decile. The darker the state, the worse the achievement gap, relative to other states. Connecticut, Illinois, and Maryland have consistently had the worst achievement gap between poverty and non-poverty students over the years. The achievement gap has worsened in California, Colorado, Minnesota, New York, Ohio, Texas, and Washington.</p>
+                <p>This next map ranks these differences in average scale scores in total (over the whole dataset, from 2003 to 2015), and colors each state according to decile. The darker the state, the worse the achievement gap, relative to other states. Connecticut, Illinois, and Maryland have consistently had the worst achievement gap between economically disadvantaged students and their peers over the years. The achievement gap has worsened in California, Colorado, Minnesota, New York, Ohio, Texas, and Washington, relative to other states.</p>
                 <h4>Achievement Gap Between Non-Poverty Students and Their Peers: Ranked</h4>
 				<iframe src='assets/grade4_math_ranked.html' scrolling='no' seamless class='rChart datamaps '	id=iframe-chart_2 width=100% height=500px></iframe>
 				<br><br><br>
-				<p>A couple things to note: Correlation is not causation; and educational outcomes are dependent on many factors, not just what happens in the classroom.</p>
+				<p>A couple things to note: assessments provide a snapshot of education, they are not the whole story; and the National School Lunch program has seen increasing enrollment since its inception, while actual poverty rates have fluctated with the U.S. economy. [<a href="http://www.brookings.edu/research/reports/2016/06/30-no-more-free-lunch-for-education-policymakers-and-researchers-chingos">4</a>] Given the latter, since more students have become eligible for free and reduced priced lunches than those who are considered economically disadvantaged, then it would appear that the academic achievement gap as captured by the NAEP — the difference between the average scale scores between non-eligible students and their peers — is possibly masking poverty's impact on educational outcome. On the first point, we assume that "test scores are the best available measure of educational achievement". [<a href="http://www.mckinsey.com/industries/social-sector/our-insights/the-economic-cost-of-the-us-education-gap">5</a>]</p>
 				<br><br>
-				<p>However, it's clear that the U.S. education system and the socioeconomic policies supporting it need to evolve.</p>
+				<p></p>
             </div>
         </div>
     </section>
@@ -131,7 +131,10 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p></p>
+            <h4>Trivia</h4>
+            <p>These still lives of apples were painted by the Post-Impressionist French painter, Paul Cézanne, who is ocassionally referred to as the "father of modern art". [<a href="https://www.theguardian.com/artanddesign/jonathanjonesblog/2013/feb/05/paul-cezanne-founding-father-modern-art">n</a>] He once said, "I will astonish Paris with an apple." [<a href="http://www.smithsonianmag.com/arts-culture/cezanne-107584544/?no-ist">n+1</a>]</p>
+            <br>
+            <p>No one really knows where the long-standing association between apples and teachers came from; there was one article — apparently by <i>Gourmet</i>; the link is now defunct — claiming poor families in Denmark and Sweden would offer an apple as school payment in the 1700s. [<a href="https://www.childrensmuseum.org/blog/why-do-teachers-like-apples">m</a>] This maybe-ism has spread throughout the internet. As far as this author can figure, the earliest and clearest connection is Bing Crosby's 1939 <a href="https://www.youtube.com/watch?v=JEEnCK6P0Ik">"An Apple for the Teacher"</a>.</p>
         </div>
     </footer>
 
